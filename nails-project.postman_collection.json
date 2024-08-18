@@ -1,0 +1,578 @@
+{
+	"info": {
+		"_postman_id": "87cafbc2-22da-4163-a3b7-79e4d097a249",
+		"name": "nails-project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33295894"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Daniel\",\n    \"lastName\": \"winiarczyk\",\n    \"email\": \"asdasdd@onet.pl\",\n    \"password\": \"asdaasdasdasdas1s\",\n    \"phoneNumber\": \"123123123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"asdasdd@onet.pl\",\n    \"password\": \"asdaasdasdasdas1s\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "old-account",
+					"item": [
+						{
+							"name": "old-account-all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2Rhc2RkQG9uZXQucGwiLCJpYXQiOjE3MjM4Mjk1OTIsImV4cCI6MTcyMzgzMDQ5Mn0.q-UaTDXNMwJ8HRyuUCcpcQZNf5dMM2gjCve_IwXuPgyCrdjaPa9ki6koIXLg4rau"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8080/old-account/all"
+							},
+							"response": []
+						},
+						{
+							"name": "old-account-delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2Rhc2RkQG9uZXQucGwiLCJpYXQiOjE3MjM4Mjk1OTIsImV4cCI6MTcyMzgzMDQ5Mn0.q-UaTDXNMwJ8HRyuUCcpcQZNf5dMM2gjCve_IwXuPgyCrdjaPa9ki6koIXLg4rau"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/old-account/delete?accountId=asdasdasd",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"old-account",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "accountId",
+											"value": "asdasdasd"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "account-update-name",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2Rhc2Rhc2Rhc2Rzc2Rhc2Rhc2Rhc3MiLCJpYXQiOjE3MjMwNzc4MzMsImV4cCI6MTcyMzA3ODczM30.1RyuHzMbONvZ1884Efk8BqivR3Grw-t08wO7bGDTGy60K6TG3wXQ2XCXWIPTaTUt"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newFirstName\": \"Kuba\",\n    \"newLastName\": \"jakistama\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/account/update/name"
+					},
+					"response": []
+				},
+				{
+					"name": "account-update-password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2Rhc2RkQG9uZXQucGwiLCJpYXQiOjE3MjMzNzY0MzAsImV4cCI6MTcyMzM3NzMzMH0.oKvdyX6D-aFivGIS1QL-QMbcO9NHAdierNV7cv6X_LX_Paq0Mu64mJQH6aMKrokJ"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldPassword\": \"asdaasdasdasdas1s\",\n    \"newPassword\": \"1asasaasdcfasdfasda\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/account/update/password"
+					},
+					"response": []
+				},
+				{
+					"name": "account-update-phone-number",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2Rhc2Rhc2Rhc2Rzc2Rhc2Rhc2Rhc3MiLCJpYXQiOjE3MjMwODA0MDEsImV4cCI6MTcyMzA4MTMwMX0.DlXw44iF4CUSmU1eZvfDzOlLMg_efcWzJ6qY6VmlphILRf50FBPXsATYYeKaquZN"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newPhoneNumber\": \"123123122\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/account/update/phone-number"
+					},
+					"response": []
+				},
+				{
+					"name": "account-delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2Rhc2Rhc2Rhc2Rzc2Rhc2Rhc2Rhc3MiLCJpYXQiOjE3MjMwODAyMTcsImV4cCI6MTcyMzA4MTExN30.9iWkXLUaOZGAyvKGhfKVmlRC0O0wsdF7e0k8Uks616mjFUcbgQAX1PqHzkKwMwrX"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"asdasdasdasdssdasdasdass\",\n    \"password\": \"12345asdasd678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/account/delete"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "task",
+			"item": [
+				{
+					"name": "old-task",
+					"item": [
+						{
+							"name": "old-task-all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2Rhc2RkQG9uZXQucGwiLCJpYXQiOjE3MjM4Mjk1OTIsImV4cCI6MTcyMzgzMDQ5Mn0.q-UaTDXNMwJ8HRyuUCcpcQZNf5dMM2gjCve_IwXuPgyCrdjaPa9ki6koIXLg4rau"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8080/old-task/all"
+							},
+							"response": []
+						},
+						{
+							"name": "old-task-delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2Rhc2RkQG9uZXQucGwiLCJpYXQiOjE3MjM4Mjk1OTIsImV4cCI6MTcyMzgzMDQ5Mn0.q-UaTDXNMwJ8HRyuUCcpcQZNf5dMM2gjCve_IwXuPgyCrdjaPa9ki6koIXLg4rau"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/old-task/delete?taskId=82653629-181d-4a22-8855-88f4e8f0e811",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"old-task",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "taskId",
+											"value": "82653629-181d-4a22-8855-88f4e8f0e811"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "task-add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2Rhc2RkQG9uZXQucGwiLCJpYXQiOjE3MjM5MjExMDIsImV4cCI6MTcyMzkyMjAwMn0.ROmzGYpINo4AxHSo5_wJYCPCrp8v4vagIFLYhVs88-bOTRz0NUiujKpeWvX7DQ2w"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"taskId\": \"12345\",\n    \"name\": \"Manicure Deluxe\",\n    \"price\": 120.50,\n    \"durationTime\": 90,\n    \"description\": \"A luxurious manicure treatment with premium products.\",\n    \"createdAt\": \"2024-08-15T11:00:00\",\n    \"updatedAt\": \"2024-08-15T12:30:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/task/add"
+					},
+					"response": []
+				},
+				{
+					"name": "task-fetch-all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/task/fetch/all"
+					},
+					"response": []
+				},
+				{
+					"name": "task-fetch-by-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/task/fetch/by-id?taskId=34be0360-3ad6-4abd-8863-e7575d684359",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"task",
+								"fetch",
+								"by-id"
+							],
+							"query": [
+								{
+									"key": "taskId",
+									"value": "34be0360-3ad6-4abd-8863-e7575d684359"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "task-delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2Rhc2RkQG9uZXQucGwiLCJpYXQiOjE3MjM3MTk1MDQsImV4cCI6MTcyMzcyMDQwNH0.-qH5XRTgoy7uJyGXuTMEtkcrGqDITyF4mu5dbjG-0Zt2dI6QMbv3zK2k_IjKSh_p"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/task/delete?taskId=a1ef03bf-eaf0-4559-8ff6-665447a040f0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"task",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "taskId",
+									"value": "a1ef03bf-eaf0-4559-8ff6-665447a040f0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "task-update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2Rhc2RkQG9uZXQucGwiLCJpYXQiOjE3MjM3MTg1MjYsImV4cCI6MTcyMzcxOTQyNn0.GKtETVELk_Ur2IJHpUAC4Ug4KgElSEdOMn37rKPrtQvdeIb8aisIF8u7UUIRthlM"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"taskId\": \"ce30cedf-a36c-476d-bd2e-bef7e7a26dfd\",\n    \"name\": \"xddasdasfvdfvbasbafvdas\",\n    \"price\": 120.50,\n    \"durationTime\": 90,\n    \"description\": \"A luxurious manicure treatment with premium products.\",\n    \"createdAt\": \"2024-08-15T11:00:00\",\n    \"updatedAt\": \"2024-08-15T12:30:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/task/update"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "order-fetch-all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2Rhc2RkQG9uZXQucGwiLCJpYXQiOjE3MjM5MTU2MDEsImV4cCI6MTcyMzkxNjUwMX0.Y7h-88ZgE2bLX_oPs_8RSv5k9UTYGkrQATvhlqcph12KUSQGVSI_x7KjnQ5GlocB"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/order/fetch/all"
+					},
+					"response": []
+				},
+				{
+					"name": "order-fetch-my-orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2Rhc2RkQG9uZXQucGwiLCJpYXQiOjE3MjM5MTU2MDEsImV4cCI6MTcyMzkxNjUwMX0.Y7h-88ZgE2bLX_oPs_8RSv5k9UTYGkrQATvhlqcph12KUSQGVSI_x7KjnQ5GlocB"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/order/fetch/my"
+					},
+					"response": []
+				},
+				{
+					"name": "order-fetch-all-confirmed-not-done",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2Rhc2RkQG9uZXQucGwiLCJpYXQiOjE3MjM5MTU2MDEsImV4cCI6MTcyMzkxNjUwMX0.Y7h-88ZgE2bLX_oPs_8RSv5k9UTYGkrQATvhlqcph12KUSQGVSI_x7KjnQ5GlocB"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/order/fetch/all/confirmed-not-done"
+					},
+					"response": []
+				},
+				{
+					"name": "order-fetch-all-done",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2Rhc2RkQG9uZXQucGwiLCJpYXQiOjE3MjM5MTU4OTQsImV4cCI6MTcyMzkxNjc5NH0.LiS65sGIE3y6RWP7m_n1xpzxj_snTiL7mpQmR4aqEsDivHWW3DglMMXfYJ0GXjAW"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/order/fetch/all/done"
+					},
+					"response": []
+				},
+				{
+					"name": "order-fetch-all-not-confirmed",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2Rhc2RkQG9uZXQucGwiLCJpYXQiOjE3MjM5MTU4OTQsImV4cCI6MTcyMzkxNjc5NH0.LiS65sGIE3y6RWP7m_n1xpzxj_snTiL7mpQmR4aqEsDivHWW3DglMMXfYJ0GXjAW"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/order/fetch/all/not-confirmed"
+					},
+					"response": []
+				},
+				{
+					"name": "order-fetch-by-id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2Rhc2RkQG9uZXQucGwiLCJpYXQiOjE3MjM5MTU4OTQsImV4cCI6MTcyMzkxNjc5NH0.LiS65sGIE3y6RWP7m_n1xpzxj_snTiL7mpQmR4aqEsDivHWW3DglMMXfYJ0GXjAW"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/order/fetch/by-id?orderId=xddd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"fetch",
+								"by-id"
+							],
+							"query": [
+								{
+									"key": "orderId",
+									"value": "xddd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order-make",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2Rhc2RkQG9uZXQucGwiLCJpYXQiOjE3MjM5MjEyNTEsImV4cCI6MTcyMzkyMjE1MX0.VozofdSNPL64Fe5Rylehe0U1HdYns9AYg8jnIKg_NWJAeF-s-Vs97ZQdUP9NExLy"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/order/make?taskId=272ffa50-24b3-456d-a234-835797304623",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"make"
+							],
+							"query": [
+								{
+									"key": "taskId",
+									"value": "272ffa50-24b3-456d-a234-835797304623"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order-confirm",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2Rhc2RkQG9uZXQucGwiLCJpYXQiOjE3MjM5MjExMDIsImV4cCI6MTcyMzkyMjAwMn0.ROmzGYpINo4AxHSo5_wJYCPCrp8v4vagIFLYhVs88-bOTRz0NUiujKpeWvX7DQ2w"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"time\": \"2024-08-17T15:30:00\",\n  \"orderId\": \"e3a94c51-52a0-42c8-a717-4bc3ddb230a4 \"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/order/confirm"
+					},
+					"response": []
+				},
+				{
+					"name": "order-done",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2Rhc2RkQG9uZXQucGwiLCJpYXQiOjE3MjM5MTYyMDMsImV4cCI6MTcyMzkxNzEwM30.os2q2o7OcIJhPEwv_NRAy9Bu8Cu8-TJAUMmNNkebaOdydEiqscDvORJlo0He9qO6"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/order/done?orderId=asdasdas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"done"
+							],
+							"query": [
+								{
+									"key": "orderId",
+									"value": "asdasdas"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
